@@ -49,6 +49,7 @@ class AuthorList extends React.Component {
                 </div>
                 </div>
                 <div className="container mb-2">
+                <Link to="/authors/new" className="btn btn-success mb-2">Create A New Author</Link>
                 <table  className="table table-striped table-hover table-bordered">
                     <thead>
                     <tr>
