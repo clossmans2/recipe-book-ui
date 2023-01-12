@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 class AuthorList extends React.Component {
@@ -19,6 +20,19 @@ class AuthorList extends React.Component {
                       <td>{author.firstName}</td>
                       <td>{author.lastName}</td>
                       <td>{author.email}</td>
+                      <td>
+                        <Link to={`/authors/${author.id}`}>
+                            <i className="bi bi-file-text"></i>
+                        </Link>
+                        &nbsp; | &nbsp;
+                        <Link to={`/authors/${author.id}/edit`}>
+                            <i className="bi bi-pencil-square"></i>
+                        </Link>
+                        &nbsp; | &nbsp;
+                        <Link to={`/authors/${author.id}/delete`}>
+                            <i className="bi bi-trash"></i>
+                        </Link>
+                      </td>
                     </tr>
                     );
                   })
@@ -42,6 +56,7 @@ class AuthorList extends React.Component {
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
